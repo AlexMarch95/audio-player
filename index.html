@@ -11,17 +11,14 @@
 
 <body>
     <img src="/audio-player/assets/img/dontstartnow.png" class="background">
-    <audio src="/audio-player/assets/audio/dontstartnow.mp3" id="music">
-        <source src="/audio-player/assets/audio/dontstartnow.mp3">
-    </audio>
-    <source src="/audio-player/assets/audio/dontstartnow.mp3" type="audio/mpeg" class="playMusic">
+    <audio src="/audio-player/assets/audio/dontstartnow.mp3" id="music1"></audio>
+    <audio src="/audio-player/assets/audio/beyonce.mp3" id="music2"></audio>
     <div class="container">
         <div class="box"></div>
         <img src="/audio-player/assets/img/dontstartnow.png" alt="error" id="cover">
         <img src="/audio-player/assets/svg/backward.png" alt="error" class="button last">
-        <img src="/audio-player/assets/svg/forward.png" alt="error" class="button next" onclick="stopAudio()">
-        <img src="/audio-player/assets/svg/play.png" alt="error" class="button play" onclick="playAudio()">
-        <img src="/audio-player/assets/svg/pause.png" alt="error" class="button pause">
+        <img src="/audio-player/assets/svg/forward.png" alt="error" class="button next" onclick="playNext()">
+        <img src="/audio-player/assets/svg/play.png" alt="error" class="button play-pause" onclick="playAudio()">
         <div class="song-artist">Dua Lipa</div>
         <div class="song-title">Don't Start Now</div>
         <input type="range" class="progress-bar" min="0" max="203" value="0">
