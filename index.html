@@ -5,25 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
     <title></title>
 </head>
 
 <body>
     <img src="/audio-player/assets/img/dontstartnow.png" class="background">
-    <audio src="/audio-player/assets/audio/dontstartnow.mp3" id="music"></audio>
-
+    <audio src="/audio-player/assets/audio/dontstartnow.mp3" id="music">
+        <source src="/audio-player/assets/audio/dontstartnow.mp3">
+    </audio>
+    <source src="/audio-player/assets/audio/dontstartnow.mp3" type="audio/mpeg" class="playMusic">
     <div class="container">
         <div class="box"></div>
         <img src="/audio-player/assets/img/dontstartnow.png" alt="error" id="cover">
         <img src="/audio-player/assets/svg/backward.png" alt="error" class="button last">
-        <img src="/audio-player/assets/svg/forward.png" alt="error" class="button next">
-        <img src="/audio-player/assets/svg/play.png" alt="error" class="button play">
+        <img src="/audio-player/assets/svg/forward.png" alt="error" class="button next" onclick="stopAudio()">
+        <img src="/audio-player/assets/svg/play.png" alt="error" class="button play" onclick="playAudio()">
         <img src="/audio-player/assets/svg/pause.png" alt="error" class="button pause">
         <div class="song-artist">Dua Lipa</div>
         <div class="song-title">Don't Start Now</div>
-        <input type="range" class="progress-bar" min="0" max="203" value="0" onchange="changeProgressBar()">
+        <input type="range" class="progress-bar" min="0" max="203" value="0">
+        <div class="currentTime">0:00</div>
+        <div class="durationTime">3:23</div>
     </div>
+
+
 </body>
 
 </html>

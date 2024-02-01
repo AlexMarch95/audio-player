@@ -70,7 +70,6 @@ body {
     cursor: pointer;
     filter: invert(1);
 }
-
 .button.play {
     bottom: 12%;
     left: 10%;
@@ -83,15 +82,15 @@ body {
 }
 
 .button.last {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     bottom: 18%;
     right: 10%;
 }
 
 .button.next {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     bottom: 10%;
     right: 10%;
 }
@@ -120,14 +119,29 @@ body {
 }
 
 .progress-bar {
+    appearance: none;
     position: absolute;
     z-index: 3;
     left: 23%;
     bottom: 3%;
     background: black;
     width: 225px;
-    appearance: none;
     border-radius: 30px;
     height: 5px;
+}
 
+/* time */
+.currentTime{
+    position: absolute;
+    z-index: 3;
+    color: white;
+    left:24%;
+    bottom:5%;
+}
+.durationTime {
+    position: absolute;
+    z-index: 3;
+    color: white;
+    right:20%;
+    bottom:5%;
 }
