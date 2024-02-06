@@ -2,6 +2,7 @@
 const audio1 = document.getElementById('music1');
 const audio2 = document.getElementById('music2');
 const audio3 = document.getElementById('music3');
+const audio4 = document.getElementById('music4');
 const back = document.getElementById('background');
 const cover = document.getElementById('cover');
 // button play-pause - button play and pause music
@@ -49,23 +50,18 @@ function playNext() {
     back.src = `/audio-player/assets/img/cover${playNum + 1}.png`
     cover.src = `/audio-player/assets/img/cover${playNum + 1}.png`
 }
+
 function playPrev() {
     playNum--;
-    if (playNum === -1) {
+    if (playNum < 0) {
+        playNum = musics.length - 1
+        musics[playNum].play()
+        musics[0].pause()
         musics[0].currentTime = 0;
-        musics[0].pause();
-        playNum = 2
-        musics[playNum].play();
-
-    } else if (playNum === 1){
-        musics[2].pause();
-        musics[2].currentTime = 0;
-        musics[1].play();
-    } else if (playNum === 0) {
-        musics[1].currentTime = 0;
-        musics[1].pause()
-        musics[0].play()
-
+    } else {
+        musics[playNum].play()
+        musics[playNum + 1].pause()
+        musics[playNum + 1].currentTime = 0;
     }
     document.getElementById('cover').classList.add('big')
     document.querySelector('.button.play-pause').classList.add('play')
@@ -74,4 +70,4 @@ function playPrev() {
     back.src = `/audio-player/assets/img/cover${playNum + 1}.png`
     cover.src = `/audio-player/assets/img/cover${playNum + 1}.png`
 }
-// button play-Next , playPrev
+// Progress bar
